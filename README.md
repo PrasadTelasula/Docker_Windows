@@ -1,35 +1,36 @@
 # Docker_Windows
 Docker on Windows Server
 
-Install Docker on Windows server
+# Install Docker on Windows server
 
-# Check the version of windows server
-      		winver
+	# Check the version of windows server
+      	   winver
 
      # Check Hyper-V is installed or not
-		Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V
+	   Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V
 
 
       # Install Hyper-V virtualisation
-		Install-WindowsFeature -Name Hyper-V -IncludeManagementTools -Restart
+	   Install-WindowsFeature -Name Hyper-V -IncludeManagementTools -Restart
 
       # if above command not working use below commands to install Hyper-V
-		Enable-WindowsOptionalFeature –Online -FeatureName Microsoft-Hyper-V –All -NoRestart             Install-WindowsFeature RSAT-Hyper-V-Tools -IncludeAllSubFeature
+	   Enable-WindowsOptionalFeature –Online -FeatureName Microsoft-Hyper-V –All -NoRestart         
+	   Install-WindowsFeature RSAT-Hyper-V-Tools -IncludeAllSubFeature
 
 
-	# Install the OneGet PowerShell module.
-		Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+      # Install the OneGet PowerShell module.
+	   Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
 
       # To see the Installed package provider and the Docker package made available through it.
-            Get-PackageProvider -ListAvailable
-            Get-PackageProvider -ListAvailable -Name DockerMsftProvider
-            Get-PackageSource -ProviderName DockerMsftProvider
+           Get-PackageProvider -ListAvailable
+           Get-PackageProvider -ListAvailable -Name DockerMsftProvider
+           Get-PackageSource -ProviderName DockerMsftProvider
 
       # Use OneGet to install the latest version of Docker.
-		Install-Package -Name docker -ProviderName DockerMsftProvider
+	   Install-Package -Name docker -ProviderName DockerMsftProvider
 
       # When the installation is complete, reboot the computer.
-		Restart-Computer -Force
+	   Restart-Computer -Force
 
        # Check Docker service status
            Get-Service -Name docker
@@ -42,17 +43,15 @@ Install Docker on Windows server
 
          
 # Docker command auto-completion
-	Install-Module -Scope CurrentUser posh-docker
+      Install-Module -Scope CurrentUser posh-docker
       Import-Module posh-docker
 
 # Docker commands
-docker version
-docker version --short
-docker info
-
-      docker system df -v
-
-      docker stats
+	docker version
+	docker version --short
+	docker info
+	docker system df -v
+	docker stats
 
 # 
 	mkdir c:\docker-stuff
