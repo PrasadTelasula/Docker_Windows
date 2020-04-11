@@ -46,11 +46,9 @@ Install Docker on Windows server
       Import-Module posh-docker
 
 # Docker commands
-
-	docker version
-      docker version --short
-
-      docker info
+docker version
+docker version --short
+docker info
 
       docker system df -v
 
@@ -61,4 +59,5 @@ Install Docker on Windows server
       cd :\docker-stuff
       Invoke-WebRequest http://ftp-nyc.osuosl.org/pub/jenkins/windows-stable/jenkins-2.222.1.zip -OutFile jenkins-2.222.1.zip
 
+# MSBuild Download Link 
 https://download.microsoft.com/download/9/B/B/9BB1309E-1A8F-4A47-A6C5-ECF76672A3B3/BuildTools_Full.exe
