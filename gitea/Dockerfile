@@ -7,6 +7,6 @@ RUN cmd $env:Path += ";C:\Program Files\Git\bin"
 WORKDIR C:\\gitea
 VOLUME C:\\gitea
 ENV GITEA_CUSTOM C:\\gitea
-env ROOT C:\\gitea
+ENV ROOT C:\\gitea
 CMD ["C:\\gitea_install\\gitea.exe", "web"]
 EXPOSE 3000
